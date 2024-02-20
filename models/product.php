@@ -1,38 +1,23 @@
 <?php
-class singleProduct {
+class product {
     public $name;
     public $description;
     public $price; 
     public $image;
-    public $type;
+    public $category;
 
-    public function printDetails (){
-        $className = get_class($this);
-        if ($className === $className){
-            echo $className;
-        }
-        else {
-            echo "Error";
-        }
-    }
-
-    public function __construct(string $name, string $description, string $price, string $image, string $type)
+    public function __construct(
+        $name = null,
+        $description = null,
+        $price = null,
+        $image = null,
+        $category = null,
+    )
     {
         $this->name = $name;
         $this->description = $description;
         $this->price = $price;
         $this->image = $image;
-        $this->type = $type;
+        $this->category = $category;
     }
-}
-
-class product extends singleProduct {
-    public function __construct($name, $price, $image)
-    {
-        $this->name = $name;
-        $this->price = $price;
-        $this->image = $image;
-        $this->type = 'product';
-    }
-    
 }

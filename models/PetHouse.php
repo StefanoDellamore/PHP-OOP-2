@@ -2,12 +2,12 @@
 
 require_once __DIR__."/product.php";
 
-class game extends product {
-    public $material;
-
+class PetHouse extends product {
+    public $size;
+    
     public function __construct(
         $name,
-        $material,
+        $size,
         $description = null,
         $price = null,
         $image = null,
@@ -15,7 +15,7 @@ class game extends product {
     )
     {
         $this->name = $name;
-        $this->material = $material;
+        $this->size = $size;
         $this->description = $description;
         $this->price = $price;
         $this->image = $image;

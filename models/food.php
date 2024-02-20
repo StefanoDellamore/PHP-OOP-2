@@ -5,19 +5,23 @@ require_once __DIR__."/product.php";
 class food extends product {
     public $weight;
     public $ingredients;
-    public $cut;
-
-
-    public function __construct($name, $price, $image, $description, $type, string $weight, string $ingredients, string $cut)
-    {   
-        parent::__construct($name, $price, $image, $description, $type);
+    
+    public function __construct(
+        $name,
+        $weight,
+        $ingredients,
+        $description = null,
+        $price = null,
+        $image = null,
+        $category = null,
+    )
+    {
+        $this->name = $name;
         $this->weight = $weight;
         $this->ingredients = $ingredients;
-        $this->cut = $cut;
-    }
-
-    public function printDetails()
-    {
-        return "food";
+        $this->description = $description;
+        $this->price = $price;
+        $this->image = $image;
+        $this->category = $category;
     }
 }
