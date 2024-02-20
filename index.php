@@ -10,8 +10,8 @@ $catCategory = new category ('gatti');
 
 $allProducts = [];
 
-$genericProduct = new Product ('
-    Product',
+$genericProduct = new Product (
+    'Product',
     'lorem ipsum dolar itsu',
     7,
     null,
@@ -68,7 +68,7 @@ $allProducts[] = $PetHuoseFirst;
 <div class="card">
     <h1>Prodotti</h1>
     <?php 
-        foreach ($allProducts as $singleProduct)
+        foreach ($allProducts as $singleProduct) {
     ?>
 
     <h2>
@@ -91,21 +91,21 @@ $allProducts[] = $PetHuoseFirst;
         <li>
             Peso:<?php echo $singleProduct->weight;?>
         </li>
-
-        <?php } else if (get_class($singleProduct) == 'food') {?>
         <li>
             Ingredienti:<?php echo $singleProduct->ingredients;?>
         </li>
 
-        <?php } else if (get_class($singleProduct) == 'PetHuose')?>
+        <?php } else if (get_class($singleProduct) == 'PetHouse'){?>
         <li>
             Grandezza:<?php echo $singleProduct->size;?>
         </li>
-
+        <?php } ?>
         <li>
             Descrizione:<?php echo $singleProduct->description;?>
         </li>
     </ul>
+
+    <?php } ?>
 
 </div>
 
