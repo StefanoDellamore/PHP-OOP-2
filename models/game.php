@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__."/product.php";
+require_once __DIR__.'/traits/HasName.php';
 
 class game extends product {
     public $material;

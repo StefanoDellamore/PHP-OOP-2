@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__.'/traits/HasName.php';
 class product {
     public $name;
     public $description;
@@ -7,7 +8,7 @@ class product {
     public $category;
 
     public function __construct(
-        $name = null,
+        $name,
         $description = null,
         $price = null,
         $image = null,

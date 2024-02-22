@@ -10,15 +10,19 @@ $catCategory = new category ('gatti');
 
 $allProducts = [];
 
-$genericProduct = new Product (
-    'Product',
-    'lorem ipsum dolar itsu',
-    7,
-    null,
-    $dogCategory
-);
-
-$allProducts[] = $genericProduct;
+try {
+    $genericProduct = new Product(
+        'Product',
+        'lorem ipsum dolar itsu',
+        7,
+        $_GET['q1'],
+        $dogsCategory
+    );
+    $allProducts[] = $genericProduct;
+}
+catch (Exception $e) {
+    echo '<h4 style="color: red;">Valore quantità prodotto generico non valido!</h4>';
+}
 
 $gameFirst = new game (
     'Corda Osso',
@@ -72,7 +76,7 @@ $allProducts[] = $PetHuoseFirst;
     ?>
 
     <h2>
-        <?php echo $singleProduct->name;?>
+        <?php echo $singleProduct->getName();?>
     </h2>
     <ul>
         <li>
